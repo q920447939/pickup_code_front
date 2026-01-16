@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mode Selection Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0055D4",
+                        "background-light": "#F8FAFC",
+                        "offline-icon": "#64748B",
+                        "online-icon": "#0055D4",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-active {
+            box-shadow: 0 10px 30px -5px rgba(0, 85, 212, 0.15);
+        }
+    </style>
+<style>
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light">
+<header class="flex items-center justify-between p-6 pt-12">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-primary text-xl">package_2</span>
+</div>
+<button class="flex items-center gap-1.5 text-slate-600 text-sm font-semibold hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">help</span>
+<span>Mode Guide</span>
+</button>
+</header>
+<main class="flex-1 flex flex-col px-6">
+<div class="mt-4 mb-8">
+<h1 class="text-slate-900 text-3xl font-bold leading-tight tracking-tight mb-3">
+                    Select Your <br/>Storage Mode
+                </h1>
+<p class="text-slate-500 text-base font-medium leading-relaxed">
+                    Choose how you want to handle your data and synchronization.
+                </p>
+</div>
+<div class="flex flex-col gap-5">
+<button class="group relative flex flex-col items-start text-left p-6 rounded-2xl border border-slate-200 bg-white card-shadow transition-all duration-200 hover:border-slate-300 active:scale-[0.98]">
+<div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-50 text-offline-icon group-hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-3xl">shield_person</span>
+</div>
+<div class="w-full">
+<div class="flex justify-between items-center mb-1.5">
+<h3 class="text-slate-900 text-lg font-bold">Offline Mode</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-500 border border-slate-200/50">Private</span>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed mb-4">
+                            Ultimate privacy. All data stays on this device. No account or internet required.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="flex items-center gap-1 text-[11px] text-slate-500 font-bold bg-slate-50 px-2.5 py-1 rounded-full border border-slate-100">
+<span class="material-symbols-outlined text-sm">database</span> Local
+                            </span>
+<span class="flex items-center gap-1 text-[11px] text-slate-500 font-bold bg-slate-50 px-2.5 py-1 rounded-full border border-slate-100">
+<span class="material-symbols-outlined text-sm">cloud</span> No-Sync
+                            </span>
+</div>
+</div>
+</button>
+<button class="group relative flex flex-col items-start text-left p-6 rounded-2xl border-2 border-primary bg-white card-active transition-all duration-200 active:scale-[0.98]">
+<div class="absolute -top-3 right-6 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
+                        Recommended
+                    </div>
+<div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-online-icon">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">cloud_sync</span>
+</div>
+<div class="w-full">
+<div class="flex justify-between items-center mb-1.5">
+<h3 class="text-slate-900 text-lg font-bold">Online Mode</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-100 text-primary border border-blue-200/50">Connected</span>
+</div>
+<p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Sync across devices, use AI extraction, and share codes with family members.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="flex items-center gap-1 text-[11px] text-primary font-bold bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
+<span class="material-symbols-outlined text-sm">auto_awesome</span> AI Smart
+                            </span>
+<span class="flex items-center gap-1 text-[11px] text-primary font-bold bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
+<span class="material-symbols-outlined text-sm">groups</span> Shared
+                            </span>
+</div>
+</div>
+</button>
+</div>
+</main>
+<footer class="p-6 pb-12 flex flex-col gap-4">
+<button class="w-full h-14 rounded-2xl bg-primary text-white font-bold text-base shadow-lg shadow-blue-600/20 active:scale-[0.97] transition-all">
+                Confirm Selection
+            </button>
+<p class="text-center text-slate-400 text-xs font-medium">
+                You can change your preference later in Settings.
+            </p>
+</footer>
+<div class="fixed -bottom-20 -right-20 w-80 h-80 bg-blue-100/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="fixed -top-20 -left-20 w-80 h-80 bg-slate-200/20 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+
+</body></html>

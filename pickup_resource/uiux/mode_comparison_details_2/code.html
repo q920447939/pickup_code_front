@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Online Mode Network Error</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "background-light": "#fafaf9",
+                        "background-dark": "#17191c",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @layer base {
+            body {
+                @apply bg-background-light dark:bg-background-dark font-display text-[#101918] dark:text-[#f9fbfb] min-h-screen flex items-center justify-center p-6;
+            }
+        }
+        .ios-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body>
+<div class="relative w-full max-w-[375px] bg-white dark:bg-[#1c1f22] rounded-[32px] ios-shadow overflow-hidden flex flex-col items-center px-8 pt-16 pb-12 border border-[#d3e3e2]/30 dark:border-[#288a82]/10">
+<div class="relative mb-10">
+<div class="w-32 h-32 rounded-full bg-[#f0f7f6] dark:bg-[#288a82]/10 flex items-center justify-center">
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-[64px] opacity-40">cloud</span>
+<span class="material-symbols-outlined absolute inset-0 text-[#e67e22] text-[64px]" style="font-variation-settings: 'FILL' 0, 'wght' 300;">cloud_off</span>
+</div>
+</div>
+<div class="absolute inset-0 rounded-full border border-primary/20 scale-125"></div>
+</div>
+<div class="text-center space-y-4 mb-12">
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Connection Lost</h1>
+<p class="text-[#5a8c88] dark:text-[#a0c4c1] text-[15px] leading-relaxed">
+                We can't reach the server to sync your group codes. Please check your internet connection.
+            </p>
+</div>
+<div class="w-full space-y-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 rounded-2xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+                Try Again
+            </button>
+<button class="w-full bg-[#f0f7f6] dark:bg-[#288a82]/10 text-primary dark:text-[#a0c4c1] font-semibold py-4 rounded-2xl transition-all active:scale-[0.98] flex items-center justify-center gap-2 border border-transparent hover:border-primary/20">
+<span class="material-symbols-outlined text-[20px]">cloud_off</span>
+                Switch to Offline Mode
+            </button>
+</div>
+<p class="mt-8 text-[12px] text-[#5a8c88]/60 dark:text-[#a0c4c1]/40 text-center uppercase tracking-widest font-bold">
+            Status: Connection Timeout
+        </p>
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+<div class="fixed bottom-2 w-32 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full sm:hidden"></div>
+
+</body></html>

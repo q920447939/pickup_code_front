@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mode Comparison Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "background-light": "#fafaf9",
+                        "background-dark": "#17191c",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .dark .glass-effect {
+            background: rgba(23, 25, 28, 0.8);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101918] dark:text-[#f9fbfb] min-h-screen flex items-end sm:items-center justify-center">
+<!-- Modal Container (Simulating an iOS Bottom Sheet/Modal) -->
+<div class="relative w-full max-w-md bg-white dark:bg-[#1c1f22] rounded-t-xl sm:rounded-xl shadow-2xl overflow-hidden border border-[#d3e3e2]/30 dark:border-[#288a82]/20">
+<!-- BottomSheetHandle Style -->
+<div class="flex flex-col items-center pt-3 pb-1">
+<div class="h-1.5 w-12 rounded-full bg-[#d3e3e2] dark:bg-gray-700"></div>
+</div>
+<!-- SectionHeader Content -->
+<div class="px-6 pt-4 pb-2">
+<h4 class="text-primary text-xs font-bold leading-normal tracking-[0.15em] uppercase text-center">Comparison Guide</h4>
+<h2 class="text-2xl font-bold text-center mt-1">Mode Description</h2>
+<p class="text-[#5a8c88] dark:text-[#a0c4c1] text-sm text-center mt-2 px-4 leading-relaxed">
+                Choose the workflow that fits your package retrieval needs today.
+            </p>
+</div>
+<!-- Comparison Content -->
+<div class="p-6">
+<!-- Header Grid for Modes -->
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-[#f0f7f6] dark:bg-[#288a82]/10 p-4 rounded-xl flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2" style="font-size: 32px;">shield_lock</span>
+<p class="font-bold text-sm">Offline Mode</p>
+<p class="text-[10px] text-[#5a8c88] mt-1 leading-tight uppercase tracking-wider">Privacy First</p>
+</div>
+<div class="bg-[#288a82] p-4 rounded-xl flex flex-col items-center text-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white mb-2" style="font-size: 32px;">cloud_sync</span>
+<p class="font-bold text-sm text-white">Online Mode</p>
+<p class="text-[10px] text-white/70 mt-1 leading-tight uppercase tracking-wider">Collaboration</p>
+</div>
+</div>
+<!-- Feature Comparison Table -->
+<div class="space-y-0.5">
+<!-- Data Row -->
+<div class="grid grid-cols-2 gap-0 border-t border-[#d3e3e2]/50 dark:border-[#288a82]/10">
+<div class="py-4 pr-3 border-r border-[#d3e3e2]/50 dark:border-[#288a82]/10">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xs">database</span>
+<p class="text-[#5a8c88] text-[10px] font-bold uppercase tracking-tighter">Storage</p>
+</div>
+<p class="text-sm font-medium">Local Only</p>
+<p class="text-[11px] text-[#5a8c88] leading-tight mt-1">Stays on your phone</p>
+</div>
+<div class="py-4 pl-4">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xs">cloud_done</span>
+<p class="text-[#5a8c88] text-[10px] font-bold uppercase tracking-tighter">Sync</p>
+</div>
+<p class="text-sm font-medium">Cloud AI</p>
+<p class="text-[11px] text-[#5a8c88] leading-tight mt-1">Cross-device backup</p>
+</div>
+</div>
+<!-- Recognition Row -->
+<div class="grid grid-cols-2 gap-0 border-t border-[#d3e3e2]/50 dark:border-[#288a82]/10">
+<div class="py-4 pr-3 border-r border-[#d3e3e2]/50 dark:border-[#288a82]/10">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xs">scan_delete</span>
+<p class="text-[#5a8c88] text-[10px] font-bold uppercase tracking-tighter">Vision</p>
+</div>
+<p class="text-sm font-medium">Basic OCR</p>
+</div>
+<div class="py-4 pl-4">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xs">psychology</span>
+<p class="text-[#5a8c88] text-[10px] font-bold uppercase tracking-tighter">Intelligence</p>
+</div>
+<p class="text-sm font-medium">Advanced AI</p>
+</div>
+</div>
+<!-- Access Row -->
+<div class="grid grid-cols-2 gap-0 border-t border-[#d3e3e2]/50 dark:border-[#288a82]/10">
+<div class="py-4 pr-3 border-r border-[#d3e3e2]/50 dark:border-[#288a82]/10">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xs">person</span>
+<p class="text-[#5a8c88] text-[10px] font-bold uppercase tracking-tighter">Users</p>
+</div>
+<p class="text-sm font-medium">Private</p>
+</div>
+<div class="py-4 pl-4">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xs">group</span>
+<p class="text-[#5a8c88] text-[10px] font-bold uppercase tracking-tighter">Sharing</p>
+</div>
+<p class="text-sm font-medium">Group Sync</p>
+</div>
+</div>
+</div>
+<!-- Checklists -->
+<div class="mt-4 p-4 rounded-xl bg-[#f9fbfb] dark:bg-black/20 border border-[#d3e3e2]/30">
+<p class="text-[10px] font-bold uppercase text-[#5a8c88] mb-2 px-1">Common Benefits</p>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-center gap-3">
+<div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px; font-weight: bold;">check</span>
+</div>
+<p class="text-sm">End-to-end encrypted codes</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px; font-weight: bold;">check</span>
+</div>
+<p class="text-sm">Minimalist pickup interface</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-6 pt-2 pb-10 sm:pb-6 bg-white dark:bg-[#1c1f22]">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                I Understand
+            </button>
+<button class="w-full mt-3 text-[#5a8c88] dark:text-[#a0c4c1] font-medium text-sm py-2 text-center">
+                Close
+            </button>
+</div>
+<!-- Abstract Background Detail (Subtle) -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+</body></html>

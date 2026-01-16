@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "background-light": "#f9fafa",
+                        "background-dark": "#171a1c",
+                        "approve": "#22c55e",
+                        "reject": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Epilogue', sans-serif;
+            min-height: 100dvh;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#101918] dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<header class="flex items-center p-4 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 ios-blur z-20">
+<button class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined font-bold">arrow_back_ios_new</span>
+</button>
+<h2 class="text-[#101918] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Member Management</h2>
+</header>
+<main class="flex-1 flex flex-col px-5 pb-12 gap-8">
+<section class="flex flex-col gap-4 pt-4">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-[#101918] dark:text-white text-sm font-bold uppercase tracking-wider">Awaiting Approval</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">3 New</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-white dark:bg-gray-800/50 p-4 rounded-2xl shadow-sm border border-[#d3e3e2] dark:border-gray-700/50 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD84Tcx4I6_t1aF4vAUrHDHe6ttxTT14Gs-rW-c3mESUhXbIduePgCsRfyuZju-TbY8JFKx9BhOWh79XrpqQfY4dP9Hb3VI6UHcBz8ilNe4Lf7ghEz_iShUQNGOAAr0o38SoK8ZSCJjybBg06smbq30IBCNISeZycaQ_MoDVC-FfxC5VWXKiQWZYzEpDfuaU4NS0d-PZb0VmsvtvYImPAuus4U887HrDnES4rU7TezFy0ZPvZN4y6WtqOU54LDPIGRKRbhzw1iUDq4"/>
+</div>
+<div>
+<p class="font-bold text-[#101918] dark:text-white">Alex Johnson</p>
+<p class="text-xs text-[#5a8c88] dark:text-gray-400">Requested 2h ago</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded-full border-2 border-reject/20 text-reject hover:bg-reject/5 transition-colors">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-full bg-approve text-white shadow-lg shadow-approve/20 hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-xl">check</span>
+</button>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800/50 p-4 rounded-2xl shadow-sm border border-[#d3e3e2] dark:border-gray-700/50 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-mZ4NuwuEwUD7NlteU3oBoBDyNU0ZUsYjt7bxlTUAT7NX9OjzAWEBSoQDOgTlgrQ3SZuxfKyPqoABMKXkG3Sn-O_ZGOwY-9DTTqcI0GYRXelNzsIKORLod05ZTNmWgiZKwh8JHgxqyFtG6-KsXsyJ00seCOIwuXxfMXckSyYi9KANffj_zhlFBuS8KyCpQJtLt6E4z8IfuV0GcGohsW2g7Q8BKMjnHrvSYL8x2igRkgGVmVQqUzLnP3cB4wCwdA4uNT6yocifHBE"/>
+</div>
+<div>
+<p class="font-bold text-[#101918] dark:text-white">Sarah Miller</p>
+<p class="text-xs text-[#5a8c88] dark:text-gray-400">Requested 5h ago</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="size-10 flex items-center justify-center rounded-full border-2 border-reject/20 text-reject hover:bg-reject/5 transition-colors">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-full bg-approve text-white shadow-lg shadow-approve/20 hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-xl">check</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-[#101918] dark:text-white text-sm font-bold uppercase tracking-wider">Current Members</h3>
+<span class="text-[#5a8c88] dark:text-gray-400 text-xs font-medium">8 Total</span>
+</div>
+<div class="bg-white dark:bg-gray-800/50 rounded-2xl shadow-sm border border-[#d3e3e2] dark:border-gray-700/50 divide-y divide-[#d3e3e2] dark:divide-gray-700/50 overflow-hidden">
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<img alt="avatar" class="size-10 rounded-full border-2 border-background-light dark:border-gray-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYxUfJNdwRDRum0IbgydH8Vy7Crq4qp6MRHxpynJmMdHBqe3_LOo-Awg4DpERVZyhgJn-SUZWLXHCGxB2ToaciSm4HwqVj5LHsSsNG85BkgQ1MZP5L5RlxoJS8yKAYj3PBMyFv49gMnWqD1YVrfLa61v3OfdYy5O30UDp2IvizNGwo8baEr-jSXiAJ1Ub7NKHk5_bA74sUC8ebM_RGG35sFMEGOfOx_D95lFhYjwTv2u2NqBo1CkROwSYKbz00raVVCY-0JYHqqd0"/>
+<div>
+<p class="font-semibold text-sm text-[#101918] dark:text-white">Jordan Smith</p>
+<p class="text-[10px] text-primary font-bold uppercase tracking-tighter">Admin (You)</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<img alt="avatar" class="size-10 rounded-full border-2 border-background-light dark:border-gray-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpZfTOCNcyJpV-VwTAKxJr6o7mNU6MPhk3vD6uZVtVl5W5XapjKQPTUF7i7yEbbnol2Xw-YptYF91Q3l4xvcu5Hto-G_Ub_HiL5JBWjSwXLg35heaiG7oGq4XcIgXJsOYvytGNfzbtu1xCkXoADVZzexHZFkUbkhkDKEKyxNwVEN4dtQksTedsMCYtR-5oSppKFy5m8H7UN0uBlu1FCbyfidaPZtoCySgBZIeIaRVkou1hPhqwbW3NQYwu1tK6d-_MRG1XviRNmmg"/>
+<div>
+<p class="font-semibold text-sm text-[#101918] dark:text-white">Casey West</p>
+<p class="text-[10px] text-[#5a8c88] dark:text-gray-400 font-medium">Joined Oct 12, 2023</p>
+</div>
+</div>
+<button class="text-reject/60 text-xs font-semibold hover:text-reject transition-colors px-3 py-1 rounded-lg">
+                            Remove
+                        </button>
+</div>
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<img alt="avatar" class="size-10 rounded-full border-2 border-background-light dark:border-gray-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4_1_LL6ygUPV5S6cNveyXpUd4LEj2L8efCIjaSWotc1w05CFll9YVWSIQpF_J-k_oXRTzsrVh5M5JvfQrGstinA_jJOu9nkAjw3sZ3JBz9npo1MXVfAFlF4E7trb2BLCkbBiDuKa5KrB1zRgqt55kHv-4hMInn2g8f3fnOgXeD2mV_n0OKWXPYWMxL7u6RPPZOJas3JMb21EaB7EtH--T3_ZOch0VQe3s80kiI3CkVnfNgCnzjYiZepjms85y6DW0uiIMSpB6AKY"/>
+<div>
+<p class="font-semibold text-sm text-[#101918] dark:text-white">Riley Greene</p>
+<p class="text-[10px] text-[#5a8c88] dark:text-gray-400 font-medium">Joined Oct 15, 2023</p>
+</div>
+</div>
+<button class="text-reject/60 text-xs font-semibold hover:text-reject transition-colors px-3 py-1 rounded-lg">
+                            Remove
+                        </button>
+</div>
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<img alt="avatar" class="size-10 rounded-full border-2 border-background-light dark:border-gray-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo7vBlIAetGp0w20gUZUyLffkyPm3lOh4XSg32XY85cxO4jjHP7H6Sw86TwQmVs_5kV0KTB4wvrmnKFWBqXF8Rc2r915zNa782xkDaWT4P-_lZANk5YAFnyDu42hc9vAIm4lrpoxK5EJbFv32A8xIQ-o3lHAkZQsCxUTpchJNb90Npns1-Q6BZ9v9y52xOuYj7OUyYQPgzu4UOdJqf4HWhEm5gVoy0-xy22nUf85NOmTDISav3cY0xbtzD-G3uns2jyB6G_h4E7Lw"/>
+<div>
+<p class="font-semibold text-sm text-[#101918] dark:text-white">Taylor V.</p>
+<p class="text-[10px] text-[#5a8c88] dark:text-gray-400 font-medium">Joined Oct 16, 2023</p>
+</div>
+</div>
+<button class="text-reject/60 text-xs font-semibold hover:text-reject transition-colors px-3 py-1 rounded-lg">
+                            Remove
+                        </button>
+</div>
+</div>
+</section>
+</main>
+<div class="p-6 pt-2 bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-sm">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl h-14 bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">person_add</span>
+<span>Invite New Members</span>
+</button>
+</div>
+<div class="h-8 w-full flex justify-center items-end pb-2">
+<div class="w-32 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+</div>
+</div>
+
+</body></html>

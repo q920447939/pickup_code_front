@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "ios-bg": "#ffffff",
+                        "ios-gray": "#f2f2f7",
+                        "ios-text-secondary": "#8e8e93",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .ios-divider {
+            @apply border-b border-gray-100;
+        }
+        .backdrop-blur-ios {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased bg-gray-100">
+<div class="relative mx-auto h-[844px] w-[390px] overflow-hidden rounded-[3.5rem] border-[8px] border-black bg-white shadow-2xl flex flex-col">
+<div class="w-full px-8 pt-4 pb-2 flex justify-between items-center z-10 shrink-0">
+<div class="text-[15px] font-bold text-black">9:41</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-black">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[18px] text-black">wifi</span>
+<span class="material-symbols-outlined text-[22px] text-black">battery_full_alt</span>
+</div>
+</div>
+<div class="flex-1 px-6 pt-2 opacity-40">
+<h1 class="text-2xl font-bold mb-6">Active Pickups</h1>
+<div class="space-y-4">
+<div class="bg-ios-gray p-4 rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">package_2</span>
+</div>
+<div>
+<div class="font-bold">Amazon Locker - Swift</div>
+<div class="text-xs text-ios-text-secondary">Code: 884-291</div>
+</div>
+</div>
+<div class="bg-ios-gray p-4 rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">local_post_office</span>
+</div>
+<div>
+<div class="font-bold">FedEx Drop-off</div>
+<div class="text-xs text-ios-text-secondary">Code: QR-9023</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 bg-black/30 backdrop-blur-sm z-20"></div>
+<div class="absolute bottom-0 inset-x-0 z-30 flex flex-col items-center">
+<div class="w-full bg-white rounded-t-[2.5rem] shadow-2xl flex flex-col animate-in slide-in-from-bottom duration-500">
+<div class="w-full flex justify-center pt-3 pb-2">
+<div class="w-10 h-1.5 bg-gray-200 rounded-full"></div>
+</div>
+<div class="px-6 pb-4">
+<h2 class="text-xl font-extrabold text-black mb-1">Select Group</h2>
+<p class="text-[14px] text-ios-text-secondary mb-6">Choose a group to share this pickup code with</p>
+<div class="space-y-0 bg-ios-gray/50 rounded-2xl overflow-hidden border border-gray-100">
+<label class="flex items-center px-4 py-4 cursor-pointer active:bg-gray-100 transition-colors">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-primary text-[20px]">groups</span>
+</div>
+<div class="flex-1">
+<p class="text-[15px] font-bold text-black">Family Pickup</p>
+<p class="text-[12px] text-ios-text-secondary">3 members</p>
+</div>
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded-full" name="group-selection" type="radio"/>
+</label>
+<div class="ios-divider ml-16"></div>
+<label class="flex items-center px-4 py-4 cursor-pointer active:bg-gray-100 transition-colors">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-blue-600 text-[20px]">work</span>
+</div>
+<div class="flex-1">
+<p class="text-[15px] font-bold text-black">Office Team</p>
+<p class="text-[12px] text-ios-text-secondary">5 members</p>
+</div>
+<input class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded-full" name="group-selection" type="radio"/>
+</label>
+<div class="ios-divider ml-16"></div>
+<label class="flex items-center px-4 py-4 cursor-pointer active:bg-gray-100 transition-colors">
+<div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-orange-600 text-[20px]">home</span>
+</div>
+<div class="flex-1">
+<p class="text-[15px] font-bold text-black">Roommates</p>
+<p class="text-[12px] text-ios-text-secondary">2 members</p>
+</div>
+<input class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded-full" name="group-selection" type="radio"/>
+</label>
+</div>
+<div class="mt-8 space-y-3">
+<button class="w-full bg-primary text-white py-4 rounded-2xl font-bold text-base active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+                            Share Now
+                        </button>
+<button class="w-full py-3 text-ios-text-secondary font-medium text-[15px] active:opacity-60 transition-opacity">
+                            Cancel
+                        </button>
+</div>
+</div>
+<div class="w-full h-8 flex items-center justify-center shrink-0">
+<div class="w-32 h-1 bg-black/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 text-black/30 text-xs font-medium uppercase tracking-[0.2em] pointer-events-none">
+        Group Selection View
+    </div>
+
+</body></html>

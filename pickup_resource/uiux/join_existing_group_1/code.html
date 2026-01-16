@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "background-light": "#f9fafa",
+                        "background-dark": "#171a1c",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Epilogue', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#101918] dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Top Navigation -->
+<header class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md z-10">
+<button class="text-[#101918] dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-[#101918] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Join Group</h2>
+</header>
+<main class="flex-1 flex flex-col px-6 pt-8 pb-12">
+<!-- Icon/Visual Element -->
+<div class="flex justify-center mb-8">
+<div class="size-20 rounded-3xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">group_add</span>
+</div>
+</div>
+<!-- Header Text -->
+<div class="text-center mb-10">
+<h1 class="text-[#101918] dark:text-white text-[28px] font-bold leading-tight mb-3">Join Existing Group</h1>
+<p class="text-[#5a8c88] dark:text-gray-400 text-base font-normal leading-relaxed">
+                    Enter the unique Group ID provided by your collaborator to start managing pickup codes together.
+                </p>
+</div>
+<!-- Form Section -->
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-[#101918] dark:text-white text-sm font-semibold tracking-wider uppercase pl-1">
+                        Group ID
+                    </label>
+<div class="relative group">
+<input class="form-input flex w-full min-w-0 flex-1 rounded-xl text-[#101918] dark:text-white border-2 border-[#d3e3e2] dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary dark:focus:border-primary focus:ring-0 h-16 px-5 text-xl font-bold tracking-widest placeholder:text-[#5a8c88]/40 placeholder:font-normal placeholder:tracking-normal transition-all shadow-sm" maxlength="8" placeholder="e.g., AB1234" type="text" value=""/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-primary/40 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">key</span>
+</div>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="flex pt-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary hover:bg-primary/90 text-white text-lg font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+<span class="truncate">Apply to Join</span>
+<span class="material-symbols-outlined ml-2 text-xl">login</span>
+</button>
+</div>
+</div>
+<!-- Footer / Secondary Actions -->
+<div class="mt-auto pt-10 flex flex-col items-center gap-6">
+<button class="text-[#5a8c88] dark:text-gray-400 text-base font-medium hover:text-primary transition-colors py-2">
+                    Cancel and return home
+                </button>
+<div class="w-full h-[1px] bg-[#d3e3e2] dark:bg-gray-800"></div>
+<div class="flex items-center gap-2 text-sm text-[#5a8c88] dark:text-gray-500">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span>End-to-end encrypted collaboration</span>
+</div>
+</div>
+</main>
+<!-- iOS Home Indicator -->
+<div class="h-8 w-full flex justify-center items-end pb-2">
+<div class="w-32 h-1.5 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+</div>
+</div>
+</body></html>

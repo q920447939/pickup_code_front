@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phone Registration &amp; Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2a586f",
+                        "background-light": "#fafafa",
+                        "background-dark": "#1f292e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .ios-input-focus:focus-within {
+            border-color: #2a586f;
+            box-shadow: 0 0 0 1px #2a586f;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111618] transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto">
+<!-- Header / TopAppBar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pt-6 justify-between">
+<button class="text-primary dark:text-gray-300 flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-[#111618] dark:text-white text-base font-semibold tracking-tight">Step 1 of 2</h2>
+<div class="size-10"></div> <!-- Spacer for balance -->
+</header>
+<main class="flex-1 flex flex-col px-6 pt-12 pb-12">
+<!-- HeadlineText Section -->
+<div class="mb-2">
+<h1 class="text-[#111618] dark:text-white tracking-[-0.03em] text-[36px] font-extrabold leading-tight">
+                    Enter Mobile <br/>Number
+                </h1>
+</div>
+<!-- BodyText Section -->
+<div class="mb-10">
+<p class="text-[#5e7a87] dark:text-gray-400 text-base font-medium leading-relaxed max-w-[280px]">
+                    We'll send a code to verify your account for Online Mode.
+                </p>
+</div>
+<!-- TextField / Input Card Section -->
+<div class="space-y-4">
+<div class="flex items-center gap-0 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-xl overflow-hidden ios-input-focus transition-all duration-200 shadow-sm">
+<!-- Country Selector -->
+<div class="flex items-center gap-2 pl-4 pr-3 py-4 border-r border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+<span class="text-base font-bold text-primary dark:text-primary/80">+1</span>
+<span class="material-symbols-outlined text-gray-400 text-sm">expand_more</span>
+</div>
+<!-- Phone Input -->
+<div class="flex-1">
+<input class="w-full bg-transparent border-none focus:ring-0 text-lg font-semibold text-[#111618] dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-600 p-4 h-14" placeholder="000 000 0000" type="tel"/>
+</div>
+</div>
+<div class="pt-4">
+<!-- SingleButton Section -->
+<button class="w-full bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all flex items-center justify-center rounded-xl h-14 px-6 text-white text-base font-bold tracking-tight shadow-lg shadow-primary/20">
+<span class="truncate">Get Verification Code</span>
+</button>
+<!-- State Mockup: Hidden countdown timer UI element (Normally toggled by JS) -->
+<div class="hidden w-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center rounded-xl h-14 px-6 text-gray-400 text-base font-bold">
+<span>Resend in 59s</span>
+</div>
+</div>
+</div>
+<!-- Decorative Element (Surprise choice: abstract minimal line) -->
+<div class="mt-auto flex justify-center pb-8 pt-12">
+<div class="h-1 w-12 bg-primary/10 rounded-full"></div>
+</div>
+<!-- Footer / Secondary Action -->
+<footer class="mt-auto pb-8">
+<button class="w-full flex items-center justify-center group">
+<span class="text-primary/60 dark:text-gray-500 text-sm font-semibold group-hover:text-primary transition-colors">
+                        Return to Mode Selection
+                    </span>
+</button>
+</footer>
+</main>
+<!-- Home Indicator for iOS -->
+<div class="flex justify-center pb-2">
+<div class="h-1.5 w-32 bg-gray-200 dark:bg-gray-800 rounded-full"></div>
+</div>
+</div>
+</body></html>

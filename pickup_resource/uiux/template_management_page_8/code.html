@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "ios-bg": "#ffffff",
+                        "ios-gray": "#f2f2f7",
+                        "ios-text-secondary": "#8e8e93",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .ios-divider {
+            @apply border-b border-gray-100;
+        }
+        .backdrop-blur-ios {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased bg-gray-100 flex items-center justify-center">
+<div class="relative mx-auto h-[844px] w-[390px] overflow-hidden rounded-[3.5rem] border-[8px] border-black bg-white shadow-2xl flex flex-col">
+<div class="w-full px-8 pt-4 pb-2 flex justify-between items-center z-10 shrink-0">
+<div class="text-[15px] font-bold text-black">9:41</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-black">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[18px] text-black">wifi</span>
+<span class="material-symbols-outlined text-[22px] text-black">battery_full_alt</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center px-8 text-center mt-[-40px]">
+<div class="relative mb-10">
+<div class="w-40 h-40 bg-primary/5 rounded-full flex items-center justify-center">
+<div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center">
+<div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1, 'wght' 300;">
+                                fingerprint
+                            </span>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-2 -right-2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center border border-gray-50">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">
+                        verified_user
+                    </span>
+</div>
+</div>
+<h1 class="text-[28px] font-extrabold text-black mb-4 tracking-tight">Secure Your Data</h1>
+<p class="text-[16px] leading-relaxed text-ios-text-secondary px-2">
+                Enable offline encryption to protect your pickup codes. You will need to use Face ID or Touch ID to view your sensitive data.
+            </p>
+<div class="mt-8 w-full space-y-4 text-left">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">lock</span>
+<p class="text-sm text-gray-600"><span class="font-bold text-black">End-to-end Encryption.</span> Your data is only readable on this device.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">offline_pin</span>
+<p class="text-sm text-gray-600"><span class="font-bold text-black">Offline Access.</span> Codes remain accessible without an internet connection.</p>
+</div>
+</div>
+</div>
+<div class="px-8 pb-10 w-full flex flex-col gap-3">
+<button class="w-full bg-primary text-white py-4 rounded-2xl font-bold text-base active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+                Enable Encryption
+            </button>
+<button class="w-full py-3 text-ios-text-secondary font-semibold text-[15px] active:opacity-60 transition-opacity">
+                Not Now
+            </button>
+</div>
+<div class="w-full h-8 flex items-center justify-center shrink-0">
+<div class="w-32 h-1.5 bg-black/10 rounded-full"></div>
+</div>
+</div>
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 text-black/30 text-xs font-medium uppercase tracking-[0.2em] pointer-events-none">
+        Offline Encryption Setup
+    </div>
+
+</body></html>

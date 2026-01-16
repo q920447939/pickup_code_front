@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select SMS for Extraction</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "background-light": "#f7f7f8",
+                        "background-dark": "#16191d",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .selection-glow {
+            box-shadow: 0 0 0 2px #288a82, 0 10px 15px -3px rgba(40, 138, 130, 0.2);
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e2e2;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101918] antialiased">
+<div class="mx-auto max-w-[430px] min-h-screen bg-background-light dark:bg-background-dark flex flex-col shadow-2xl relative overflow-hidden">
+<!-- iOS Status Bar Simulation -->
+<div class="flex justify-between items-center px-8 pt-4 pb-2 text-xs font-semibold">
+<span>9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span class="material-symbols-outlined text-[14px]">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-gray-200/50 dark:border-gray-800/50">
+<h1 class="text-[#101918] dark:text-white text-xl font-bold tracking-tight">Select SMS</h1>
+<button class="text-primary font-bold text-base hover:opacity-80 transition-opacity">Cancel</button>
+</header>
+<main class="flex-1 overflow-y-auto pb-20">
+<!-- SearchBar Section -->
+<div class="px-6 pt-6 pb-2">
+<label class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[#5a8c88] text-[22px]">search</span>
+</div>
+<input class="w-full bg-white dark:bg-[#1f2329] border-none rounded-xl py-3.5 pl-12 pr-4 text-[#101918] dark:text-white placeholder:text-[#5a8c88]/60 focus:ring-2 focus:ring-primary/50 transition-all shadow-sm" placeholder="Search (e.g., 'Express', 'Locker')" type="text"/>
+</label>
+</div>
+<!-- List Section -->
+<div class="mt-6 px-4 space-y-3">
+<p class="px-2 text-xs font-bold text-[#5a8c88] uppercase tracking-wider mb-2">Recent Messages</p>
+<!-- Selected State (Simulated) -->
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-start gap-4 selection-glow transition-all cursor-pointer relative">
+<div class="bg-primary/10 rounded-full p-2.5">
+<span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">Amazon</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">2m ago</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 line-clamp-2 leading-relaxed">Your package is ready for pickup at locker 542. Use code 8829 to open.</p>
+</div>
+<div class="absolute right-3 bottom-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</div>
+</div>
+<!-- Regular Item -->
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer active:scale-[0.98]">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-full p-2.5">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[24px]">package_2</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">FedEx</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">15m ago</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 line-clamp-2 leading-relaxed">Pickup code: 99281. Valid until 8 PM tonight at the main lobby.</p>
+</div>
+</div>
+<!-- Number-only sender -->
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer active:scale-[0.98]">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-full p-2.5">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[24px]">sms</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">1065502391</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">1h ago</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 line-clamp-2 leading-relaxed">Your delivery from China Post is arriving today. Please be home.</p>
+</div>
+</div>
+<!-- Item with different visual icon -->
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer active:scale-[0.98]">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-full p-2.5">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[24px]">inventory</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">DHL Express</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">3h ago</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 line-clamp-2 leading-relaxed">Waybill 921102: Shipment ready for collection at service point.</p>
+</div>
+</div>
+<!-- Older category -->
+<p class="px-2 text-xs font-bold text-[#5a8c88] uppercase tracking-wider mt-6 mb-2">Yesterday</p>
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer active:scale-[0.98]">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-full p-2.5">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[24px]">account_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">Mom</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">Yesterday</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 line-clamp-2 leading-relaxed">Don't forget to pick up the milk on your way back from the locker!</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-start gap-4 hover:shadow-md transition-all cursor-pointer active:scale-[0.98]">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-full p-2.5">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[24px]">store</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">UPS Store</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">Yesterday</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 line-clamp-2 leading-relaxed">Package 1Z99... has arrived at UPS Access Point: 123 Main St.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Selection Tip Overlay (Floating) -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-[85%] bg-[#101918] dark:bg-white text-white dark:text-[#101918] py-4 px-6 rounded-2xl shadow-2xl flex items-center justify-between z-30">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold uppercase tracking-widest opacity-60">Selection Mode</span>
+<span class="text-sm font-medium">Tap a message to extract code</span>
+</div>
+<div class="h-8 w-8 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[18px]">auto_fix_high</span>
+</div>
+</div>
+<!-- Home Indicator simulation -->
+<div class="bg-transparent w-full pb-2 flex justify-center">
+<div class="w-32 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+</div>
+</div>
+</body></html>

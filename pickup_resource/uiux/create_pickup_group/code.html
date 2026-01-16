@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#22262a",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 12px rgba(0, 0, 0, 0.05)',
+                        'float': '0 8px 30px rgba(0, 0, 0, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Epilogue', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#101918] dark:text-white transition-colors duration-300">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-background-light/80 dark:bg-background-dark/80 ios-blur">
+<button class="flex items-center text-primary font-medium text-base hover:opacity-70 transition-opacity">
+                Cancel
+            </button>
+<h1 class="text-lg font-bold tracking-tight text-[#101918] dark:text-white">Create Group</h1>
+<div class="w-12"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col px-8 pt-12 pb-8 overflow-y-auto">
+<!-- Icon/Visual Element -->
+<div class="mb-10 self-center">
+<div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[40px] font-light">
+                        hub
+                    </span>
+</div>
+</div>
+<div class="space-y-2 mb-10">
+<h2 class="text-[32px] font-bold leading-tight tracking-tight text-[#101918] dark:text-white">
+                    New Online Group
+                </h2>
+<p class="text-[#5a8c88] dark:text-[#a1b8b6] text-base leading-relaxed">
+                    Collaborative code sharing with family and friends for effortless package retrieval.
+                </p>
+</div>
+<!-- Input Section -->
+<div class="flex-1 flex flex-col justify-start">
+<div class="group relative transition-all duration-300">
+<label class="block mb-2 text-sm font-semibold tracking-wide text-primary uppercase">
+                        Group Name
+                    </label>
+<input class="w-full bg-white dark:bg-[#2d3238] border-none rounded-xl h-16 px-6 text-lg font-medium text-[#101918] dark:text-white shadow-soft focus:ring-2 focus:ring-primary/20 focus:shadow-float placeholder:text-[#5a8c88]/40 transition-all outline-none" placeholder="e.g. Family Pickup" type="text"/>
+</div>
+<p class="mt-4 text-xs text-[#5a8c88]/70 dark:text-[#a1b8b6]/50 italic">
+                    Others can join this group using a unique invite code generated after creation.
+                </p>
+</div>
+<!-- Action Button -->
+<div class="mt-auto pt-6">
+<button class="w-full bg-primary hover:bg-[#21736c] active:scale-[0.98] text-white rounded-xl h-16 text-lg font-bold tracking-wide shadow-float transition-all flex items-center justify-center gap-2">
+<span>Create Group</span>
+<span class="material-symbols-outlined text-xl">
+                        arrow_forward
+                    </span>
+</button>
+<div class="mt-6 flex justify-center items-center gap-2 opacity-40">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="text-[10px] uppercase font-bold tracking-widest">End-to-End Encrypted</span>
+</div>
+</div>
+</main>
+<!-- Dynamic Home Indicator (iOS Style) -->
+<div class="flex justify-center pb-2">
+<div class="w-32 h-1.5 bg-black/10 dark:bg-white/10 rounded-full"></div>
+</div>
+</div>
+</body></html>

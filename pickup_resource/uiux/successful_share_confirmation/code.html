@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "background-light": "#fafafa",
+                        "background-dark": "#21282c",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'WHT' 300, 'opsz' 48;
+            font-size: 48px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-transparent p-4 pb-2 justify-between z-10">
+<div class="text-[#101918] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined !text-[24px]">close</span>
+</div>
+<div class="flex-1"></div>
+</div>
+<main class="flex flex-col flex-grow items-center justify-center px-6">
+<!-- Success Visual Container -->
+<div class="relative mb-12 flex items-center justify-center">
+<!-- Soft decorative circles for depth -->
+<div class="absolute w-40 h-40 bg-primary/5 dark:bg-primary/10 rounded-full animate-pulse"></div>
+<div class="absolute w-32 h-32 bg-primary/10 dark:bg-primary/20 rounded-full"></div>
+<!-- Main Success Icon -->
+<div class="relative flex h-24 w-24 items-center justify-center rounded-full bg-primary text-white shadow-xl shadow-primary/20">
+<span class="material-symbols-outlined !text-[48px]">check_circle</span>
+</div>
+</div>
+<!-- Headline Section -->
+<div class="max-w-[320px] w-full space-y-3">
+<h2 class="text-[#101918] dark:text-white tracking-tight text-[28px] font-bold leading-tight text-center">
+                    Successfully Shared to <span class="text-primary">Neighborhood Group</span>
+</h2>
+<p class="text-[#4b5563] dark:text-gray-400 text-base font-normal leading-relaxed text-center px-2">
+                    Members of this group can now view and use the pickup code for retrieval.
+                </p>
+</div>
+<!-- Subtle Illustration/Image Element -->
+<div class="mt-12 w-full max-w-sm px-4">
+<div class="aspect-[4/3] rounded-3xl bg-primary/5 dark:bg-primary/10 overflow-hidden flex items-center justify-center p-8">
+<div class="w-full h-full rounded-2xl bg-center bg-cover border border-white/50 dark:border-black/20 shadow-sm" data-alt="Abstract minimalist pattern representing community and connection" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_6mfmMATOepXoUYj_0uZmXgIW5MBVogFnUajlgBgWSH22A_3zZ0B5Q3Om075Yn1uJCYhBQwHGoFYlkYePciVhNGYkISDOOtW8OYU8WM_s9OKAVpSBmVF1Y0Dx7mR-Qxbz9CUw5A6WCUATn85-xLXZlKNCAckYWIkwcYC_B8TZP-vu2WK3E2apZhb_JOzcdPaUH80f_zoTj4n73CL3tHsmqZZSPSSoY8wdsafqSVxm-6lAUzoexlPEaMw9oQHYiLnmIzaW7jcLoWQ");'>
+</div>
+</div>
+</div>
+</main>
+<!-- Button Group: Bottom Aligned -->
+<div class="mt-auto w-full pb-10 pt-6">
+<div class="flex justify-center">
+<div class="flex flex-1 gap-4 max-w-[480px] flex-col items-stretch px-6">
+<!-- Primary Action -->
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] w-full shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+<span class="truncate">Back to List</span>
+</button>
+<!-- Secondary Action -->
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-[#e9f1f0] dark:bg-white/10 text-[#101918] dark:text-white text-base font-bold leading-normal tracking-[0.015em] w-full active:scale-[0.98] transition-transform">
+<span class="truncate">View in Group</span>
+</button>
+</div>
+</div>
+</div>
+<!-- iOS Bottom Indicator Spacer -->
+<div class="h-6 bg-transparent"></div>
+</div>
+</body></html>

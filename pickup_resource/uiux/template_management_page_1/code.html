@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#131f1e",
+                        "destructive": "#B33D3D",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .ios-safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101918] dark:text-white antialiased min-h-screen">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark">
+<header class="flex items-center bg-background-light dark:bg-background-dark px-4 pt-6 pb-2 justify-between border-b border-gray-100 dark:border-white/5 opacity-40">
+<div class="flex items-center justify-center size-10 rounded-full">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#101918] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Template Management</h2>
+</header>
+<main class="flex-1 overflow-y-auto px-4 py-6 opacity-40">
+<div class="mb-4">
+<h3 class="text-[#101918] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Your Templates</h3>
+<p class="text-[#5a8c88] text-sm mt-1">Manage recognition rules for your pickup codes.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-white dark:bg-[#1c2a29] p-4 rounded-xl shadow-sm border border-gray-50 flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">key</span>
+</div>
+<div class="flex flex-col flex-1">
+<p class="text-[#101918] text-base font-bold">Cainiao Station</p>
+<p class="text-[#5a8c88] text-sm">Match 4 digits after 'Code'</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="absolute inset-0 z-50 flex items-center justify-center p-6 bg-black/20 backdrop-blur-md">
+<div class="w-full bg-white dark:bg-[#1c2a29] rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+<div class="p-8">
+<div class="flex flex-col items-center text-center mb-6">
+<div class="size-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl font-bold">cloud_sync</span>
+</div>
+<h3 class="text-[#101918] dark:text-white text-2xl font-bold tracking-tight">Switch to Online Mode?</h3>
+<p class="text-[#5a8c88] dark:text-gray-400 text-sm mt-2 px-4 leading-relaxed">
+                        Online mode enables cloud sync and collaborative pickups across your devices.
+                    </p>
+</div>
+<div class="bg-[#f6f8f8] dark:bg-black/20 rounded-2xl p-4 mb-8">
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex flex-col pr-4">
+<span class="text-[#101918] dark:text-white font-bold text-base">Import pending data</span>
+<span class="text-[#5a8c88] dark:text-gray-400 text-xs">Move current offline pickups to online</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 active:scale-[0.98] transition-all text-base">
+                        Switch &amp; Import
+                    </button>
+<button class="w-full bg-transparent text-[#5a8c88] dark:text-gray-400 font-semibold py-3 rounded-xl active:bg-black/5 dark:active:bg-white/5 transition-all text-sm">
+                        Cancel
+                    </button>
+</div>
+</div>
+<div class="px-8 py-4 bg-gray-50 dark:bg-black/10 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#5a8c88]">verified_user</span>
+<span class="text-[11px] font-medium text-[#5a8c88] uppercase tracking-wider">End-to-End Encrypted Sync</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 pb-8 bg-gradient-to-t from-background-light via-background-light to-transparent ios-safe-bottom opacity-20 pointer-events-none">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+            Add Template
+        </button>
+</div>
+</div>
+
+</body></html>

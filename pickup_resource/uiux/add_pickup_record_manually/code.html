@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Pickup Record Manually</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0e7490", // Teal/Deep Blue for high visibility
+                        "accent": "#0369a1",
+                        "background-light": "#f8fafc",
+                        "field-bg": "#ffffff",
+                        "border-clear": "#cbd5e1",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #0e7490;
+        }
+        body {
+            font-family: 'Epilogue', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.15);
+        }.custom-checkbox:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light text-slate-900 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 px-4 py-4 flex items-center justify-between">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-slate-700 text-2xl font-bold">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-slate-800">Add Record</h1>
+<div class="w-10"></div> 
+</header>
+<main class="flex-1 overflow-y-auto px-5 pt-8 pb-36">
+<div class="max-w-md mx-auto space-y-8">
+<section class="space-y-3">
+<label class="block">
+<span class="text-xs font-bold tracking-widest uppercase text-slate-500 px-1">Station Name</span>
+<div class="mt-2 relative flex items-center">
+<div class="absolute left-4 text-primary">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+<input class="form-input block w-full pl-12 pr-4 h-14 bg-field-bg border-border-clear rounded-xl focus:border-primary focus:ring-0 transition-all text-base font-medium placeholder:text-slate-400 text-slate-800" placeholder="e.g., North Gate Hive" type="text"/>
+</div>
+</label>
+</section>
+<section class="space-y-3">
+<div class="flex justify-between items-center px-1">
+<span class="text-xs font-bold tracking-widest uppercase text-slate-500">Pickup Code</span>
+<button class="flex items-center gap-1 text-xs font-bold text-primary hover:underline transition-all">
+<span class="material-symbols-outlined text-sm">chat_bubble</span>
+                        SELECT SMS SEGMENT
+                    </button>
+</div>
+<div class="relative flex items-center">
+<div class="absolute left-4 text-primary">
+<span class="material-symbols-outlined text-[22px]">barcode_scanner</span>
+</div>
+<input class="form-input block w-full pl-12 pr-4 h-14 bg-field-bg border-border-clear rounded-xl focus:border-primary focus:ring-0 transition-all text-lg tracking-[0.2em] font-mono placeholder:tracking-normal placeholder:font-sans placeholder:text-slate-400 text-slate-800" placeholder="Enter code" type="text"/>
+</div>
+</section>
+<section class="space-y-3">
+<span class="text-xs font-bold tracking-widest uppercase text-slate-500 px-1">Expiration Date</span>
+<div class="relative flex items-center">
+<div class="absolute left-4 text-primary">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+</div>
+<input class="form-input block w-full pl-12 pr-4 h-14 bg-field-bg border-border-clear rounded-xl focus:border-primary focus:ring-0 transition-all text-base font-medium text-slate-800" type="date" value="2024-12-31"/>
+</div>
+</section>
+<section class="pt-2">
+<label class="flex items-center gap-3 group cursor-pointer">
+<div class="relative flex items-center">
+<input class="custom-checkbox w-6 h-6 rounded-md border-2 border-slate-300 bg-white focus:ring-offset-0 focus:ring-0 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<span class="text-[15px] font-medium text-slate-600 group-hover:text-primary transition-colors">Save as template for future use</span>
+</label>
+</section>
+<div class="py-2">
+<div class="h-px w-full bg-slate-200"></div>
+</div>
+<section class="opacity-100">
+<div class="flex items-start gap-3 p-4 bg-cyan-50 rounded-xl border border-cyan-100">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">info</span>
+<p class="text-sm text-cyan-900 leading-relaxed font-medium">
+                        Manually added records are stored locally and only shared within your "North Gate Hive" trusted circle.
+                    </p>
+</div>
+</section>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light via-background-light to-transparent">
+<div class="max-w-md mx-auto">
+<button class="w-full h-16 bg-primary hover:bg-cyan-800 text-white font-bold text-lg rounded-2xl shadow-lg shadow-cyan-900/20 flex items-center justify-center gap-2 transition-all active:scale-[0.97]">
+<span class="material-symbols-outlined">save</span>
+                Save Record
+            </button>
+</div>
+</footer>
+<div class="fixed top-1/4 -right-32 w-80 h-80 bg-cyan-100/40 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-1/4 -left-32 w-80 h-80 bg-blue-100/30 rounded-full blur-[120px] pointer-events-none"></div>
+
+</body></html>

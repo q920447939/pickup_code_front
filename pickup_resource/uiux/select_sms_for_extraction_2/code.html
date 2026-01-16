@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Batch Operation - Pickup Codes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "danger": "#ef4444",
+                        "background-light": "#f7f7f8",
+                        "background-dark": "#16191d",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .selection-glow {
+            box-shadow: 0 0 0 2px #288a82, 0 10px 15px -3px rgba(40, 138, 130, 0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e2e2e2;
+            border-radius: 10px;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101918] antialiased">
+<div class="mx-auto max-w-[430px] min-h-screen bg-background-light dark:bg-background-dark flex flex-col shadow-2xl relative overflow-hidden">
+<div class="flex justify-between items-center px-8 pt-4 pb-2 text-xs font-semibold">
+<span>9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span class="material-symbols-outlined text-[14px]">battery_full</span>
+</div>
+</div>
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-gray-200/50 dark:border-gray-800/50">
+<div class="flex flex-col">
+<h1 class="text-[#101918] dark:text-white text-lg font-bold tracking-tight leading-none">3 Items Selected</h1>
+<span class="text-[10px] text-primary font-bold uppercase tracking-wider mt-0.5">Batch Edit Mode</span>
+</div>
+<button class="text-primary font-bold text-base hover:opacity-80 transition-opacity">Done</button>
+</header>
+<main class="flex-1 overflow-y-auto pb-32">
+<div class="px-6 pt-6 pb-2 opacity-50 pointer-events-none">
+<div class="relative">
+<div class="absolute inset-y-0 left-4 flex items-center">
+<span class="material-symbols-outlined text-[#5a8c88] text-[22px]">search</span>
+</div>
+<input class="w-full bg-white dark:bg-[#1f2329] border-none rounded-xl py-3.5 pl-12 pr-4 text-[#101918] dark:text-white placeholder:text-[#5a8c88]/60" placeholder="Search codes..." readonly="" type="text"/>
+</div>
+</div>
+<div class="mt-6 px-4 space-y-3">
+<p class="px-2 text-xs font-bold text-[#5a8c88] uppercase tracking-wider mb-2">Recent Pickup Codes</p>
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-center gap-4 selection-glow transition-all cursor-pointer border border-primary/20">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[28px] fill-1">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">Amazon Locker</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">2m ago</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 font-medium">Code: 8829-XJ</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-center gap-4 selection-glow transition-all cursor-pointer border border-primary/20">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[28px] fill-1">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">FedEx Terminal</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">15m ago</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 font-medium">Code: 99281</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-center gap-4 transition-all cursor-pointer hover:bg-gray-50">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-[28px]">circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">UPS Access Point</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">1h ago</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 font-medium">Code: 441022</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-center gap-4 selection-glow transition-all cursor-pointer border border-primary/20">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[28px] fill-1">check_circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">DHL Service</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">3h ago</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 font-medium">Code: DHL-9211</p>
+</div>
+</div>
+<p class="px-2 text-xs font-bold text-[#5a8c88] uppercase tracking-wider mt-6 mb-2">Yesterday</p>
+<div class="bg-white dark:bg-[#1f2329] rounded-xl p-4 flex items-center gap-4 transition-all cursor-pointer hover:bg-gray-50">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-[28px]">circle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-bold text-[#101918] dark:text-white truncate">Local Post Office</h3>
+<span class="text-[11px] font-medium text-[#5a8c88] mt-1 whitespace-nowrap">Yesterday</span>
+</div>
+<p class="text-sm text-[#5a8c88] dark:text-gray-400 font-medium">Code: 10655</p>
+</div>
+</div>
+</div>
+</main>
+<div class="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-[#1f2329]/95 backdrop-blur-lg border-t border-gray-200/80 dark:border-gray-800/80 px-6 pt-4 pb-8 z-30">
+<div class="flex gap-3">
+<button class="flex-1 flex flex-col items-center justify-center gap-1 bg-gray-100 dark:bg-gray-800 text-[#101918] dark:text-white py-3 rounded-2xl font-bold text-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[22px]">done_all</span>
+<span>Mark Picked</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center gap-1 bg-red-50 dark:bg-red-950/30 text-danger py-3 rounded-2xl font-bold text-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[22px]">delete</span>
+<span>Delete</span>
+</button>
+</div>
+<div class="mt-6 flex justify-center">
+<div class="w-32 h-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+</div>
+</div>
+</div>
+
+</body></html>

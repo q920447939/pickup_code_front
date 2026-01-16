@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "primary-dark": "#3d8c8c",
+                        "background-light": "#f7f8f8",
+                        "background-dark": "#17191c",
+                        "mint-soft": "#f8fdfd",
+                        "off-white": "#fbfcfc",
+                        "cool-gray": "#7a8787",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Epilogue', sans-serif;
+        }
+        .scandi-gradient {
+            background: linear-gradient(180deg, #f8fdfd 0%, #fbfcfc 100%);
+        }
+        .dark .scandi-gradient {
+            background: linear-gradient(180deg, #17191c 0%, #1a1d20 100%);
+        }
+        .input-card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(40, 138, 130, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#101918] dark:text-white antialiased">
+<div class="relative flex h-screen w-full max-w-md mx-auto flex-col scandi-gradient overflow-hidden">
+<!-- TopAppBar Navigation -->
+<div class="flex items-center p-6 pb-2 justify-between">
+<button class="text-cool-gray hover:text-primary transition-colors flex size-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-[#101918] dark:text-zinc-100 text-sm font-semibold leading-tight tracking-wide uppercase">Verification</h2>
+<div class="size-10"></div> <!-- Spacer for symmetry -->
+</div>
+<div class="flex-1 flex flex-col px-6">
+<!-- Headline Section -->
+<div class="pt-10 pb-4">
+<h1 class="text-[#101918] dark:text-white text-[32px] font-bold leading-tight tracking-tight text-center">
+                    Enter Code
+                </h1>
+<p class="text-cool-gray dark:text-zinc-400 text-base font-normal leading-relaxed pt-3 text-center max-w-[280px] mx-auto">
+                    We’ve sent a 6-digit code to <span class="text-primary font-medium">+1 (•••) •••-7890</span>
+</p>
+</div>
+<!-- ConfirmationCode Section -->
+<div class="flex justify-center py-10">
+<fieldset class="relative flex gap-2 sm:gap-3">
+<!-- Elegant Individual Input Boxes -->
+<input class="flex h-16 w-12 sm:w-14 text-center [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-primary/20 border-0 bg-white dark:bg-zinc-800 rounded-lg text-xl font-semibold text-primary input-card-shadow transition-all duration-200" inputmode="numeric" maxlength="1" type="text" value="4"/>
+<input class="flex h-16 w-12 sm:w-14 text-center [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-primary/20 border-0 bg-white dark:bg-zinc-800 rounded-lg text-xl font-semibold text-primary input-card-shadow transition-all duration-200" inputmode="numeric" maxlength="1" type="text" value="8"/>
+<input class="flex h-16 w-12 sm:w-14 text-center [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-primary/20 border-0 bg-white dark:bg-zinc-800 rounded-lg text-xl font-semibold text-primary input-card-shadow transition-all duration-200" inputmode="numeric" maxlength="1" type="text" value=""/>
+<input class="flex h-16 w-12 sm:w-14 text-center [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-primary/20 border-0 bg-white dark:bg-zinc-800 rounded-lg text-xl font-semibold text-primary input-card-shadow transition-all duration-200" inputmode="numeric" maxlength="1" type="text" value=""/>
+<input class="flex h-16 w-12 sm:w-14 text-center [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-primary/20 border-0 bg-white dark:bg-zinc-800 rounded-lg text-xl font-semibold text-primary input-card-shadow transition-all duration-200" inputmode="numeric" maxlength="1" type="text" value=""/>
+<input class="flex h-16 w-12 sm:w-14 text-center [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-primary/20 border-0 bg-white dark:bg-zinc-800 rounded-lg text-xl font-semibold text-primary input-card-shadow transition-all duration-200" inputmode="numeric" maxlength="1" type="text" value=""/>
+</fieldset>
+</div>
+<!-- Resend Action -->
+<div class="text-center mb-8">
+<p class="text-cool-gray dark:text-zinc-500 text-sm">
+                    Didn't receive the code? 
+                    <button class="text-primary font-semibold hover:underline ml-1">Resend in 00:59</button>
+</p>
+</div>
+<!-- SingleButton Section -->
+<div class="mt-auto pb-10">
+<div class="flex flex-col gap-4">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary dark:bg-primary-dark text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+<span class="truncate">Confirm &amp; Enter</span>
+</button>
+<!-- Alternative login context mentioned in prompt -->
+<button class="flex w-full cursor-pointer items-center justify-center rounded-xl h-14 px-5 bg-transparent text-cool-gray border border-cool-gray/20 text-sm font-medium hover:bg-white dark:hover:bg-zinc-800 transition-colors">
+                        Use Recovery Email
+                    </button>
+</div>
+</div>
+</div>
+<!-- Footer Privacy Link -->
+<div class="pb-8 text-center px-6">
+<p class="text-cool-gray/60 dark:text-zinc-600 text-xs">
+                By continuing, you agree to our 
+                <a class="underline hover:text-primary transition-colors" href="#">Privacy Policy</a> &amp; 
+                <a class="underline hover:text-primary transition-colors" href="#">Terms of Service</a>
+</p>
+</div>
+<!-- Abstract Decorative Element (Quiet Luxury) -->
+<div class="absolute -bottom-24 -left-24 size-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -top-24 -right-24 size-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+</body></html>

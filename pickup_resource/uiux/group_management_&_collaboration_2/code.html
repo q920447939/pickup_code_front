@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Refined Group Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A1A1A",
+                        "accent-green": "#E9F5EE",
+                        "status-green": "#10B981",
+                        "surface": "#FFFFFF",
+                        "background-day": "#FFFFFF",
+                        "ios-gray": "#F2F2F7",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "ios": "1.25rem",
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --ios-blur: blur(25px);
+        }
+        .glass-header {
+            backdrop-filter: var(--ios-blur);
+            -webkit-backdrop-filter: var(--ios-blur);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .ios-shadow-subtle {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+        .ios-shadow-card {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            min-height: 100dvh;
+            background-color: #FFFFFF;
+        }
+        .ios-tab-bar {
+            backdrop-filter: var(--ios-blur);
+            -webkit-backdrop-filter: var(--ios-blur);
+            background-color: rgba(255, 255, 255, 0.94);
+        }
+        .group-id-display {
+            letter-spacing: 0.15em;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-day font-display text-slate-900 transition-colors duration-300">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 glass-header border-b border-slate-100 px-6 py-6 flex items-center justify-between">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900">Group</h1>
+<p class="text-[10px] text-slate-400 font-bold tracking-[0.1em] uppercase">Management</p>
+</div>
+<div class="w-10 h-10 rounded-full ring-1 ring-slate-100 overflow-hidden bg-slate-50">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfXYZxJGZVmxiqqPdu5DET4iNHYG3E10cozs_V91QIY5xAGQUF6EKft5tCBPkSGP7wIi-z6XfbJpbZEIPZZzBV6Xo8PRXObN905BC85EqI19ZCmUOekT1y_KslGVR--qkKC0vSsO6FR5VVnPVF_UD2Mxh6WGG-K5vG8dXH9uPcLqiE_e7aGYHnvZBi8g377nQEIjVuvDPmiFqUsIOjVN0vX9A_DRt2FpPieI2smIsmU75wti9T1xu5MvbufwSOpKp8WzxifEGDEI4')"></div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto px-6 pt-8 pb-36 space-y-10">
+<section class="space-y-6">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-status-green animate-pulse"></div>
+<span class="text-xs font-bold text-status-green uppercase tracking-widest">Active Now</span>
+</div>
+</div>
+<div class="bg-white rounded-[2rem] p-8 border border-slate-100 ios-shadow-card">
+<div class="space-y-8">
+<div>
+<h2 class="text-3xl font-bold text-slate-900 tracking-tight">The Apartment Hub</h2>
+<p class="text-slate-500 mt-1 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                South Kensington
+                            </p>
+</div>
+<div>
+<label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-3 ml-1">Group ID</label>
+<div class="bg-slate-950 rounded-2xl p-6 flex items-center justify-between group-id-display">
+<span class="text-2xl font-bold text-white font-mono">RET-8829</span>
+<button class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-xl">content_copy</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-4 border-white bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKrC9VMYxRX36Ze59btwN8Qm6f776xbLnrDvXonhcXCx-gaPlEq2Nv-bcHLhL-ElLj7Yyoj97MZRNJYTZ9f_pEn2PUKU5OMXwSp5U1BI0hAAdLJMRqwGhFzcQ92HHOEgfZgtOMJd8y3RNIeataXJtXfvmpNyH7rA9ugnQMhIrRzV2uKNkYO7-_AopKAtoa_6F3OHBzolEqeO2TPyyt7EcYN7i-sGgfoC_cAymBuQiTgqM5UFiED-tXvFM1wLzB0nqnZZv9Ec99UTc')"></div>
+<div class="w-10 h-10 rounded-full border-4 border-white bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLphE2SuO-KfQ1fyD4tnl-fzFC4H1_C5hEAnVjqjXw9vMZ362cujZHk7iPwJooRxgTBmunDo00eJRvx3W35JHEq8OsR5aP0D5A_ZA6aGkbuw38u7OSk0reRI-kTmP21J8kBMTW_uwU_TP9f2jXAJnKBwx7uaWEUosN5dltPC18Oq5LG0PMNyp9UxjYLv5SnNTIEpFeJr0NsCTm_bEDZm9-U_5xGtbaDMw_8eX3n4HhDfNQaVZV7HAE3gT85HVWB-UmLUe28rHWyS4')"></div>
+<div class="w-10 h-10 rounded-full border-4 border-white bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9nmLs0SlTt4Zq-m54_NAjwLZBVTAxf6gqR3cAQVm4uoGXdZiUn256A3HZJ3z59lhLLRzsDdU5eUawqIRYcllVnej7qR3yhS00K9YI_2oqrWDehUm8GNeFQXR1T8M7RMwsTO3VcOsNC5E_qLaUeHh0kL8Vb1EVsjFQeJTP-a_5yViqXIrdZMR9HhmjbDxBu0oAIziNimJ6wzzibif0eCSA1B1SLAs1a-EXNssjhC-61mhManrLLUV7LwVtQAtxXO-YgzJ9DdrKVPI')"></div>
+<div class="w-10 h-10 rounded-full border-4 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-600">+4</div>
+</div>
+<span class="text-xs font-bold text-slate-400 px-3 py-1 bg-slate-50 rounded-full">7 Members</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 bg-slate-900 text-white rounded-2xl h-14 font-bold transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl">person_add</span>
+<span class="text-sm">Invite</span>
+</button>
+<button class="flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-900 rounded-2xl h-14 font-bold transition-all active:scale-95 ios-shadow-subtle">
+<span class="material-symbols-outlined text-xl">manage_accounts</span>
+<span class="text-sm">Manage</span>
+</button>
+</div>
+</section>
+<section class="space-y-4">
+<h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Options</h3>
+<div class="grid grid-cols-1 gap-4">
+<button class="flex items-center p-6 bg-white border border-slate-100 rounded-3xl ios-shadow-subtle active:scale-[0.98] transition-all">
+<div class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900 mr-4">
+<span class="material-symbols-outlined text-2xl font-variation-fill">add_circle</span>
+</div>
+<div class="flex-1 text-left">
+<p class="font-bold text-lg text-slate-900 leading-none">Create Group</p>
+<p class="text-xs text-slate-400 mt-1.5 font-medium uppercase tracking-tight">Set up a new hub</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</button>
+<button class="flex items-center p-6 bg-white border border-slate-100 rounded-3xl ios-shadow-subtle active:scale-[0.98] transition-all">
+<div class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900 mr-4">
+<span class="material-symbols-outlined text-2xl font-variation-fill">qr_code_scanner</span>
+</div>
+<div class="flex-1 text-left">
+<p class="font-bold text-lg text-slate-900 leading-none">Join Existing</p>
+<p class="text-xs text-slate-400 mt-1.5 font-medium uppercase tracking-tight">Enter access code</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 w-full ios-tab-bar border-t border-slate-100 px-8 pt-3 pb-8 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1.5 text-slate-400">
+<span class="material-symbols-outlined text-[26px]">list_alt</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">List</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 text-slate-400">
+<span class="material-symbols-outlined text-[26px]">keyboard</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Manual</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 text-slate-900">
+<span class="material-symbols-outlined text-[26px] font-variation-fill">group</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Group</span>
+</button>
+<button class="flex flex-col items-center gap-1.5 text-slate-400">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Settings</span>
+</button>
+</nav>
+</div>
+
+</body></html>

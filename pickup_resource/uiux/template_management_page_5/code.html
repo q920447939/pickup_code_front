@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#288a82",
+                        "surface-light": "#f6f8f8",
+                        "card-bg": "#ffffff",
+                        "ios-black": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "ios": "2.5rem",
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .ios-shadow {
+            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.04);
+        }
+        .breathing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased">
+<div class="relative mx-auto h-[844px] w-[390px] overflow-hidden rounded-[3rem] border-[8px] border-black bg-surface-light shadow-2xl">
+<div class="absolute top-0 w-full px-8 py-4 flex justify-between items-center z-10 bg-surface-light">
+<div class="text-[15px] font-bold text-black">9:41</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg text-black">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-lg text-black text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-lg text-black text-[22px]">battery_full_alt</span>
+</div>
+</div>
+<div class="absolute top-3 left-1/2 -translate-x-1/2 w-[120px] h-[35px] bg-black rounded-full z-20"></div>
+<div class="h-full pt-20 pb-28 overflow-y-auto px-6">
+<div class="mt-8 mb-10 text-center">
+<h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Help Center</h1>
+<p class="text-slate-500 mt-2 text-sm">How can we help you today?</p>
+</div>
+<div class="relative mb-12">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-xl">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 bg-white border-none rounded-2xl ios-shadow text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="Search for help topics..." type="text"/>
+</div>
+<div class="breathing-grid">
+<button class="flex flex-col items-center justify-center p-6 bg-white rounded-3xl ios-shadow hover:scale-[0.98] transition-transform text-center group">
+<div class="size-12 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-2xl">person</span>
+</div>
+<span class="text-xs font-bold text-slate-800 leading-tight">Account &amp; Login</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white rounded-3xl ios-shadow hover:scale-[0.98] transition-transform text-center group">
+<div class="size-12 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-2xl">cloud_sync</span>
+</div>
+<span class="text-xs font-bold text-slate-800 leading-tight">Offline vs Online</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white rounded-3xl ios-shadow hover:scale-[0.98] transition-transform text-center group">
+<div class="size-12 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-2xl">barcode_scanner</span>
+</div>
+<span class="text-xs font-bold text-slate-800 leading-tight">Auto Recognition</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white rounded-3xl ios-shadow hover:scale-[0.98] transition-transform text-center group">
+<div class="size-12 rounded-2xl bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-2xl">groups</span>
+</div>
+<span class="text-xs font-bold text-slate-800 leading-tight">Group Collaboration</span>
+</button>
+</div>
+<div class="mt-12">
+<div class="flex justify-between items-center mb-4 px-1">
+<h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider">Top Articles</h3>
+<span class="text-xs font-semibold text-primary">View All</span>
+</div>
+<div class="space-y-3">
+<div class="p-4 bg-white/50 rounded-2xl border border-white/40 flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 text-lg">article</span>
+<span class="text-sm font-medium text-slate-700">How to share pickup codes with family</span>
+</div>
+<div class="p-4 bg-white/50 rounded-2xl border border-white/40 flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 text-lg">article</span>
+<span class="text-sm font-medium text-slate-700">Syncing issues in offline mode</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-surface-light via-surface-light to-transparent">
+<button class="w-full bg-primary text-white font-bold h-14 rounded-2xl flex items-center justify-center shadow-lg active:scale-95 transition-transform">
+                Contact Support
+            </button>
+<div class="w-32 h-1.5 bg-black/10 rounded-full mx-auto mt-6"></div>
+</div>
+</div>
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 text-black/30 text-xs font-medium uppercase tracking-[0.2em] pointer-events-none">
+        Help Center Interface
+    </div>
+
+</body></html>
