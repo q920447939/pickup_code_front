@@ -14,6 +14,7 @@ import io.flutter.embedding.engine.plugins.util.GeneratedPluginRegister
 import io.flutter.plugin.common.MethodChannel
 
 private const val smsChannel = "pickup_code_front/sms_background"
+private const val smsForegroundChannel = "pickup_code_front/sms_foreground"
 private const val smsEntryPoint = "smsBackgroundMain"
 private const val smsLibrary = "package:pickup_code_front/background/sms_background.dart"
 private const val smsTag = "PickupSms"
@@ -32,10 +33,47 @@ class SmsReceiver : BroadcastReceiver() {
     if (body.isEmpty()) {
       return
     }
+    Log.d(smsTag, "SMS received (len=${body.length})")
     val pendingResult = goAsync()
-    SmsBackgroundEngine.enqueue(context, body) {
-      pendingResult.finish()
+
+    // If the app is already running, deliver SMS to the foreground isolate so it
+    // can reuse the app's DB connection and update UI immediately. Otherwise,
+    // fall back to a short-lived background FlutterEngine.
+    val messenger = MainActivity.smsMessenger
+    if (messenger != null) {
+      try {
+        val channel = MethodChannel(messenger, smsForegroundChannel)
+        channel.invokeMethod(
+          "onSmsReceived",
+          mapOf("message" to body),
+          object : MethodChannel.Result {
+            override fun success(result: Any?) {
+              pendingResult.finish()
+            }
+
+            override fun error(
+              errorCode: String,
+              errorMessage: String?,
+              errorDetails: Any?,
+            ) {
+              Log.w(smsTag, "Foreground handler error: $errorCode $errorMessage")
+              SmsBackgroundEngine.enqueue(context, body) { pendingResult.finish() }
+            }
+
+            override fun notImplemented() {
+              Log.w(smsTag, "Foreground handler not implemented; fallback")
+              SmsBackgroundEngine.enqueue(context, body) { pendingResult.finish() }
+            }
+          },
+        )
+        Log.d(smsTag, "Delivered to foreground channel")
+        return
+      } catch (error: Throwable) {
+        Log.w(smsTag, "Failed to deliver to foreground; fallback", error)
+      }
     }
+
+    SmsBackgroundEngine.enqueue(context, body) { pendingResult.finish() }
   }
 }
 

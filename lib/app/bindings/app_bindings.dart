@@ -13,6 +13,8 @@ import 'package:pickup_code_front/app/services/widget_link_service.dart';
 import 'package:pickup_code_front/app/services/widget_preference_service.dart';
 import 'package:pickup_code_front/app/services/widget_service.dart';
 import 'package:pickup_code_front/app/services/widget_sync_service.dart';
+import 'package:pickup_code_front/app/services/sms_permission_service.dart';
+import 'package:pickup_code_front/app/services/sms_foreground_service.dart';
 import 'package:pickup_code_front/domain/repositories/pickup_repository.dart';
 import 'package:pickup_code_front/domain/repositories/reminder_setting_repository.dart';
 import 'package:pickup_code_front/domain/repositories/template_rule_repository.dart';
@@ -86,5 +88,8 @@ class AppBindings extends Bindings {
       permanent: true,
     );
     unawaited(widgetLinkService.init());
+
+    unawaited(SmsPermissionService().init());
+    unawaited(SmsForegroundService().init());
   }
 }
