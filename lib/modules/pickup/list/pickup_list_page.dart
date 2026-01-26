@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:pickup_code_front/app/routes/app_routes.dart';
+import 'package:pickup_code_front/domain/entities/app_mode.dart';
 import 'package:pickup_code_front/domain/entities/pickup.dart';
 import 'package:pickup_code_front/modules/mode/mode_controller.dart';
 import 'package:pickup_code_front/modules/pickup/list/pickup_list_controller.dart';
@@ -100,12 +101,6 @@ class PickupListPage extends GetView<PickupListController> {
                           icon: const Icon(Icons.close),
                         ),
                   hintText: '搜索取件码/驿站/备注',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.r),
-                    borderSide: BorderSide.none,
-                  ),
                 ),
               );
             }),
@@ -113,6 +108,13 @@ class PickupListPage extends GetView<PickupListController> {
           SizedBox(height: 4.h),
           Obx(() {
             final filters = PickupFilter.values;
+            // IMPORTANT: Read Rx values inside this Obx builder.
+            // If Rx reads only happen inside ListView's itemBuilder, GetX can't track them
+            // and will throw "improper use of a GetX" at runtime.
+            final selectedFilter = controller.filter.value;
+            final counts = <PickupFilter, int>{
+              for (final value in filters) value: controller.countForFilter(value),
+            };
             return SizedBox(
               height: 36.h,
               child: ListView.separated(
@@ -120,8 +122,8 @@ class PickupListPage extends GetView<PickupListController> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   final filter = filters[index];
-                  final selected = controller.filter.value == filter;
-                  final count = controller.countForFilter(filter);
+                  final selected = selectedFilter == filter;
+                  final count = counts[filter] ?? 0;
                   return ChoiceChip(
                     label: Text('${_filterLabel(filter)} $count'),
                     selected: selected,
@@ -209,16 +211,19 @@ class _ModeChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary.withValues(alpha: 31),
-        borderRadius: BorderRadius.circular(20.r),
+        color: theme.colorScheme.primary.withValues(alpha: 45),
+        borderRadius: BorderRadius.circular(999),
+        border: Border.all(color: theme.colorScheme.outlineVariant, width: 1),
       ),
       child: Text(
         label,
-        style: Theme.of(context).textTheme.labelSmall?.copyWith(
-          color: Theme.of(context).colorScheme.primary,
+        style: theme.textTheme.labelSmall?.copyWith(
+          color: theme.colorScheme.onSurface,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
@@ -254,7 +259,7 @@ class _PickupCard extends StatelessWidget {
     final statusColor = _statusColor(context, status);
     return Card(
       child: InkWell(
-        borderRadius: BorderRadius.circular(12.r),
+        borderRadius: BorderRadius.circular(18.r),
         onTap: onTap,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
@@ -276,7 +281,11 @@ class _PickupCard extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: statusColor.withValues(alpha: 31),
-                      borderRadius: BorderRadius.circular(10.r),
+                      borderRadius: BorderRadius.circular(999),
+                      border: Border.all(
+                        color: Theme.of(context).colorScheme.outlineVariant,
+                        width: 1,
+                      ),
                     ),
                     child: Text(
                       statusText,
@@ -330,8 +339,11 @@ class _PickupCard extends StatelessWidget {
                 Wrap(
                   spacing: 8.w,
                   children: [
-                    TextButton(onPressed: onPicked, child: const Text('标记已取')),
-                    TextButton(
+                    OutlinedButton(
+                      onPressed: onPicked,
+                      child: const Text('标记已取'),
+                    ),
+                    OutlinedButton(
                       onPressed: onAbnormal,
                       child: const Text('标记异常'),
                     ),

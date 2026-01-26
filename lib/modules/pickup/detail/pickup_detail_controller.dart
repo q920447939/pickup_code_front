@@ -267,9 +267,10 @@ class PickupDetailController extends GetxController {
     return Get.bottomSheet<GroupInfo>(
       Container(
         padding: const EdgeInsets.only(top: 12, bottom: 24),
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        decoration: BoxDecoration(
+          color: Get.theme.colorScheme.surface,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          border: Border.all(color: Get.theme.colorScheme.outline),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -279,7 +280,7 @@ class PickupDetailController extends GetxController {
               height: 4,
               margin: const EdgeInsets.only(bottom: 12),
               decoration: BoxDecoration(
-                color: Colors.black12,
+                color: Get.theme.colorScheme.outlineVariant,
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
@@ -296,7 +297,8 @@ class PickupDetailController extends GetxController {
                     onTap: () => Get.back(result: group),
                   );
                 },
-                separatorBuilder: (_, __) => const Divider(height: 1),
+                separatorBuilder: (context, index) =>
+                    const Divider(height: 1),
                 itemCount: groups.length,
               ),
             ),

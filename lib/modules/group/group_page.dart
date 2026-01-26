@@ -102,14 +102,7 @@ class _LoginCard extends StatelessWidget {
             SizedBox(height: 8.h),
             TextField(
               controller: controller.nicknameController,
-              decoration: InputDecoration(
-                hintText: '昵称（可选）',
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-              ),
+              decoration: const InputDecoration(hintText: '昵称（可选）'),
             ),
             SizedBox(height: 10.h),
             FilledButton.icon(
@@ -186,13 +179,8 @@ class _GroupActions extends StatelessWidget {
                 SizedBox(height: 8.h),
                 TextField(
                   controller: controller.groupNameController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: '小组名称（例如：家庭代取）',
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
                   ),
                 ),
                 SizedBox(height: 8.h),
@@ -216,14 +204,7 @@ class _GroupActions extends StatelessWidget {
                 SizedBox(height: 8.h),
                 TextField(
                   controller: controller.inviteCodeController,
-                  decoration: InputDecoration(
-                    hintText: '邀请码（例如：ABCD-1234）',
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                  ),
+                  decoration: const InputDecoration(hintText: '邀请码（例如：ABCD-1234）'),
                 ),
                 SizedBox(height: 8.h),
                 FilledButton.icon(
@@ -259,7 +240,7 @@ class _GroupCard extends StatelessWidget {
     return Card(
       margin: EdgeInsets.only(bottom: 12.h),
       child: InkWell(
-        borderRadius: BorderRadius.circular(12.r),
+        borderRadius: BorderRadius.circular(18.r),
         onTap: onTap,
         child: Padding(
           padding: EdgeInsets.all(16.w),

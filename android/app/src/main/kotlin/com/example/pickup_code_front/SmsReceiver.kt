@@ -10,7 +10,7 @@ import android.util.Log
 import io.flutter.FlutterInjector
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.dart.DartExecutor
-import io.flutter.embedding.engine.plugins.util.GeneratedPluginRegisterer
+import io.flutter.embedding.engine.plugins.util.GeneratedPluginRegister
 import io.flutter.plugin.common.MethodChannel
 
 private const val smsChannel = "pickup_code_front/sms_background"
@@ -85,7 +85,7 @@ private object SmsBackgroundEngine {
         smsEntryPoint,
       )
       engine.dartExecutor.executeDartEntrypoint(entrypoint)
-      GeneratedPluginRegisterer.registerGeneratedPlugins(engine)
+      GeneratedPluginRegister.registerGeneratedPlugins(engine)
 
       val channel = MethodChannel(engine.dartExecutor.binaryMessenger, smsChannel)
       var ready = false

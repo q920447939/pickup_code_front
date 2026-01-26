@@ -65,14 +65,14 @@ class PickupDetailPage extends GetView<PickupDetailController> {
           SizedBox(height: 8.h),
           Obx(() {
             return InkWell(
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(18.r),
               onTap: () => controller.selectExpireAt(context),
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 14.h),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(color: Colors.black12),
+                  color: theme.colorScheme.surface,
+                  borderRadius: BorderRadius.circular(18.r),
+                  border: Border.all(color: theme.colorScheme.outline),
                 ),
                 child: Row(
                   children: [
@@ -104,14 +104,7 @@ class PickupDetailPage extends GetView<PickupDetailController> {
           SizedBox(height: 8.h),
           Obx(() {
             return InputDecorator(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
-                  borderSide: BorderSide.none,
-                ),
-              ),
+              decoration: const InputDecoration(),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<PickupStatus>(
                   value: controller.status.value,
@@ -158,9 +151,9 @@ class PickupDetailPage extends GetView<PickupDetailController> {
                 Container(
                   padding: EdgeInsets.all(12.w),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(color: Colors.black12),
+                    color: theme.colorScheme.surface,
+                    borderRadius: BorderRadius.circular(18.r),
+                    border: Border.all(color: theme.colorScheme.outline),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -174,7 +167,11 @@ class PickupDetailPage extends GetView<PickupDetailController> {
                             ),
                             decoration: BoxDecoration(
                               color: statusColor.withValues(alpha: 20),
-                              borderRadius: BorderRadius.circular(10.r),
+                              borderRadius: BorderRadius.circular(999),
+                              border: Border.all(
+                                color: theme.colorScheme.outlineVariant,
+                                width: 1,
+                              ),
                             ),
                             child: Text(
                               result == null ? '识别失败' : '识别成功',
@@ -238,8 +235,9 @@ class PickupDetailPage extends GetView<PickupDetailController> {
                       Container(
                         padding: EdgeInsets.all(10.w),
                         decoration: BoxDecoration(
-                          color: const Color(0xFFF5F6F8),
-                          borderRadius: BorderRadius.circular(8.r),
+                          color: theme.colorScheme.surfaceContainerHighest,
+                          borderRadius: BorderRadius.circular(12.r),
+                          border: Border.all(color: theme.colorScheme.outline),
                         ),
                         child: SelectableText(
                           importedText,
@@ -279,21 +277,16 @@ class PickupDetailPage extends GetView<PickupDetailController> {
                         if (!controller.saveAsTemplate.value) {
                           return const SizedBox.shrink();
                         }
-                        return Padding(
-                          padding: EdgeInsets.only(top: 8.h),
-                          child: TextField(
-                            controller: controller.templateNameController,
-                            decoration: InputDecoration(
-                              hintText: '模板名称（可选）',
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.r),
+                          return Padding(
+                            padding: EdgeInsets.only(top: 8.h),
+                            child: TextField(
+                              controller: controller.templateNameController,
+                              decoration: const InputDecoration(
+                                hintText: '模板名称（可选）',
                               ),
                             ),
-                          ),
-                        );
-                      }),
+                          );
+                        }),
                     ],
                   ),
                 ),
@@ -364,11 +357,6 @@ class _InputTile extends StatelessWidget {
           maxLines: maxLines,
           decoration: InputDecoration(
             hintText: hint,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            filled: true,
-            fillColor: Colors.white,
             suffixIcon: suffixIcon,
           ),
         ),
@@ -385,17 +373,17 @@ class _PreviewChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: const Color(0xFFF2F4F7),
-        borderRadius: BorderRadius.circular(10.r),
+        color: theme.colorScheme.surfaceContainerHighest,
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: theme.colorScheme.outline),
       ),
       child: Text(
         '$label：$value',
-        style: Theme.of(
-          context,
-        ).textTheme.bodySmall?.copyWith(color: Colors.black87),
+        style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurface),
       ),
     );
   }

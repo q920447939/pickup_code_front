@@ -34,11 +34,6 @@ class AiPage extends GetView<AiController> {
             maxLines: 5,
             decoration: InputDecoration(
               hintText: '粘贴短信正文，用于 AI 识别演示',
-              filled: true,
-              fillColor: Colors.white,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.r),
-              ),
             ),
           ),
           SizedBox(height: 10.h),
@@ -88,9 +83,9 @@ class AiPage extends GetView<AiController> {
                 Container(
                   padding: EdgeInsets.all(12.w),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(color: Colors.black12),
+                    color: theme.colorScheme.surface,
+                    borderRadius: BorderRadius.circular(18.r),
+                    border: Border.all(color: theme.colorScheme.outline),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -223,17 +218,17 @@ class _PreviewChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: const Color(0xFFF2F4F7),
-        borderRadius: BorderRadius.circular(10.r),
+        color: theme.colorScheme.surfaceContainerHighest,
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: theme.colorScheme.outline),
       ),
       child: Text(
         '$label：$value',
-        style: Theme.of(
-          context,
-        ).textTheme.bodySmall?.copyWith(color: Colors.black87),
+        style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurface),
       ),
     );
   }
